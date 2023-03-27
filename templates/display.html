@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Database | ShortiGo
+{% endblock %}
+
+
+{% block content %}
+<h3>DATA BASE</h3>
+
+<table style="display: flex;justify-content: center;align-items: center;">
+    <tr>
+        <th style="border: 2px solid black;">Original URL</th>
+        <th style="border: 2px solid black;">Short URL</th>
+
+    </tr>
+    {% for url in urls %}
+    <tr>
+        <td style="border: 2px solid black;"><a href="{{url.long}}">{{url.long}}</a></td>
+        <td style="border: 2px solid black;"><a href="http://127.0.0.1:5000/{{url.short}}">http://127.0.0.1:5000/{{url.short}}</a></td>
+        <td style="border: 2px solid black;"><a href="/delete/{{url.id}}" style="display: block;color: #f31111;text-decoration: none;padding: 10px;">DELETE</a></td>
+        
+    </tr>
+
+    
+    {% endfor %}
+</table>
+
+{% endblock %}

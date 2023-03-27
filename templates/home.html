@@ -1,0 +1,20 @@
+{% extends 'layout.html'%}
+
+{% block title %}
+Home | ShortiGo
+{% endblock %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+{% block content %}
+<form method="post" action="{{url_for('index')}}">
+
+    <label for="long_url">Enter URL:</label><br>
+    <input type="url" name="long_url" placeholder="Enter Here"><br>
+    <button type="submit">Submit</button>
+</form>
+
+
+
+{% endblock %}
